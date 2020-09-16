@@ -49,14 +49,14 @@
                 <div class="col-md-6">
                     <div class="submit-area">
                         <h4>Deposit</h4>
-                    <input id="depositAmount" class="form-control" type="text" placeholder="dollar ammount you want to deposit"><br>
+                    <input id="depositAmount" class="form-control" type="text" placeholder="& dollar amount you want to deposit"><br>
                     <button id="depositBtn" class="btn btn-success">Deopit</button>
                     </div>
                 </div>
                 <div class="col-md-6">
                     <div class="submit-area">
                         <h4>Withdraw</h4>
-                    <input id="withdrawAmount" class="form-control"  type="text" placeholder="dollar ammount you want to withdraw"><br>
+                    <input id="withdrawAmount" class="form-control"  type="text" placeholder="$ dollar amount you want to withdraw"><br>
                     <button id="withdrawBtn" class="btn btn-success">Withdraw</button>
                     </div>
                 </div>
@@ -132,10 +132,15 @@
             
             document.getElementById("withdrawAmount").value = "";
 
-            const currentBalance = document.getElementById("currentBalance").innerText;
-            const currentBalanceNumber = parseFloat(currentBalance);
-            const totalBalance = currentBalanceNumber - withdraw;
-            document.getElementById("currentBalance").innerText = totalBalance;
+
+        
+            updateSpanText("currentBalance", -1 * withdraw );
+
+    
+            // const currentBalance = document.getElementById("currentBalance").innerText;
+            // const currentBalanceNumber = parseFloat(currentBalance);
+            // const totalBalance = currentBalanceNumber - withdraw;
+            // document.getElementById("currentBalance").innerText = totalBalance;
         })
 
         function inputNumber(id) {
